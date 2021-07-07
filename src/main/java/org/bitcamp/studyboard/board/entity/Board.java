@@ -20,5 +20,16 @@ public class Board extends BaseEntity {
     private String content;
     private String writer;
 
+    public void changeTitle(String title) {
+        this.title = title;
+    }
+
+    public void changeContent(String content) {
+        this.content = content;
+    }
+    public void changeWriter(String writer) {
+        this.writer = writer;
+    }
+
 
 }

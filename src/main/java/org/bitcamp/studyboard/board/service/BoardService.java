@@ -30,4 +30,21 @@ public interface BoardService {
                 .modData(board.getModDate())
                 .build();
     }
+
+    default Board dtoToEntity(BoardDTO boardDTO) {
+        return Board.builder()
+                .bno(boardDTO.getBno())
+                .content(boardDTO.getContent())
+                .title(boardDTO.getTitle())
+                .writer(boardDTO.getWriter())
+                .build();
+    }
+
+    BoardDTO insert(BoardDTO boardDTO);
+
+    BoardDTO read(Long bno);
+
+    BoardDTO update(BoardDTO boardDTO);
+
+    Long remove(Long bno);
 }
